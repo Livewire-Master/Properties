@@ -10,10 +10,13 @@ use Livewire\Component;
 class SupportedTypesPage extends Component
 {
     public string $title = 'My default title';
-    public array $list = [];
-    public bool $isTrue = false;
-    public ?string $first_name = null;
-    public int $age = 10;
+
+    public Customer $customer;
+
+    public function mount(): void
+    {
+        $this->customer = new Customer('Armin', 'Hooshmand', 1001);
+    }
 
     public function updateMe()
     {
